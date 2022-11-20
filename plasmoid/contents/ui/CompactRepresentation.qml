@@ -6,29 +6,22 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 Item {
 
   
-  Image {
-    id: logo
-
-    //Layout.minimumWidth : plasmoid.formFactor == PlasmaCore.Types.Horizontal ? height : 1
-    //Layout.minimumHeight : plasmoid.formFactor == PlasmaCore.Types.Vertical ? width : 1
+    PlasmaComponents.Label {
+        id: compactText
+        text: "3 logs"
 
 
-    source: "images/face-smile.svg"
-    sourceSize.width: parent.width
-    sourceSize.height: parent.height
-  }
+        MouseArea {
+            id: mouseArea
+            anchors.fill: parent
 
-    MouseArea {
-    id: mouseArea
-    anchors.fill: parent
+            onClicked: {
+                plasmoid.expanded = !plasmoid.expanded;
+            }     
 
-     onClicked: {
-        plasmoid.expanded = !plasmoid.expanded;
-      }     
-
-    } // end onClicked
-
-} // end Item
+        }
+    }
+}
 
 
   

@@ -9,4 +9,4 @@ Item {
    Plasmoid.fullRepresentation: FullRepresentation {}
    Plasmoid.preferredRepresentation: Plasmoid.compactRepresentation
 	
-} // end Item
+}
