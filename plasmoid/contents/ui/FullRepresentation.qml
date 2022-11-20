@@ -13,7 +13,7 @@ Item {
         anchors.fill: parent
         Label {
             width: parent.width
-            text: "Hello Mate"
+            text: plasmoid.configuration.accessToken || "JUST TOMORROW"
             font.pixelSize: 32
             Layout.alignment: Qt.AlignHCenter
         } 

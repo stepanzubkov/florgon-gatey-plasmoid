@@ -10,6 +10,11 @@ ConfigModel {
     ConfigCategory {
     	name: "Icon"
     	source: "config/ConfigIcon.qml"
-    	icon: "image-x-generic"
+        icon: "image-x-generic"
+    }
+    ConfigCategory {
+        name: "General"
+        source: "config/ConfigGeneral.qml"
+        icon: "image-x-generic"
     }
 }
