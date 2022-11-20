@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+  http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name=""/>
+
+  <group name="Text">
+    <entry name="popupMessage" type="String">
+     <label>The message shown on the pop</label>
+     <default>Hello from Plasma 5!</default>
+   </entry>
+   <entry name="messageColor" type="Color">
+    <label>The text color</label>
+    <default>black</default>
+  </entry>
+</group>
+<group name="Icon">
+	<entry name="iconIndex" type="int">
+   <label>ListModel index to show popup icons</label>
+   <default>7</default>
+ </entry>
+</group>
+</kcfg>
