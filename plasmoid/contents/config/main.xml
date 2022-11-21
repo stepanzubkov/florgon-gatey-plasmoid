@@ -10,5 +10,9 @@
         <label>Florgon access token</label>
         <default></default>
     </entry>
+    <entry name="currentProject" type="String">
+        <label>Current Florgon project</label>
+        <default></default>
+    </entry>
   </group>
 </kcfg>
