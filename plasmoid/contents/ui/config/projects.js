@@ -6,10 +6,7 @@ function requestForProjects(accessToken, callback) {
     request.open("GET", "https://api-gatey.florgon.space/v1/project.list");
     request.setRequestHeader("Authorization", accessToken);
 
-    var projects = [];
     request.onreadystatechange = function () { callback(request); }
 
     request.send();
-
-    return projects;
 }

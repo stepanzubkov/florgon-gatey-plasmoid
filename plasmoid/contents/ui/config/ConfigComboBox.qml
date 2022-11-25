@@ -33,10 +33,10 @@ QQC2.ComboBox {
 
 	property string configKey: ''
 	readonly property string configValue: configKey ? plasmoid.configuration[configKey] : ""
-	onConfigValueChanged: {
-		if (!focus && value != configValue) {
-			selectValue(configValue)
-		}
+    onConfigValueChanged: {
+        if (!focus && value != configValue) {
+		    selectValue(configValue)
+        }
 	}
 
 	readonly property var currentItem: currentIndex >= 0 ? model[currentIndex] : null
@@ -56,20 +56,24 @@ QQC2.ComboBox {
 	property bool populated: true
 
 	Component.onCompleted: {
-		populate()
-		selectValue(configValue)
+        populate()
 	}
 
-	onCurrentIndexChanged: {
+    onCurrentIndexChanged: {
+        console.log("Currind", currentIndex, "Config value", configValue)
 		if (typeof model !== 'number' && 0 <= currentIndex && currentIndex < count) {
-			var item = model[currentIndex]
+            var item = model[currentIndex]
 			if (typeof item !== "undefined") {
-				var val = item[_valueRole]
+                var val = item[_valueRole]
 				if (configKey && (typeof val !== "undefined") && populated) {
-					plasmoid.configuration[configKey] = val
-				}
+                    plasmoid.configuration[configKey] = val;
+                } else if (!populated) {
+                    populated = true;
+                    selectValue(configValue);
+                }
 			}
-		}
+        }
+        console.log(configValue);
 	}
 
 	function size() {
@@ -93,8 +97,9 @@ QQC2.ComboBox {
 		return -1
 	}
 
-	function selectValue(val) {
-		var index = findValue(val)
+    function selectValue(val) {
+        var index = findValue(val)
+        console.log("Select", val);
 		if (index >= 0) {
 			currentIndex = index
 		}

@@ -4,6 +4,6 @@ ConfigModel {
     ConfigCategory {
         name: "General"
         source: "config/ConfigGeneral.qml"
-        icon: "image-x-generic"
+        icon: "cs-general"
     }
 }

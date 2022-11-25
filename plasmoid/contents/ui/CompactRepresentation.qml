@@ -1,14 +1,19 @@
-import QtQuick 2.0
+import QtQuick 2.6
+import QtQuick.Layouts 1.1
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
+    id: root
 
+    Layout.minimumWidth: compactText.width
+    Layout.maximumWidth: compactText.width
   
     PlasmaComponents.Label {
         id: compactText
-        text: "3 logs"
+
+        text: plasmoid.configuration.accessToken ? `${eventsModel.count} events` : "- events"
 
 
         MouseArea {
@@ -20,6 +25,10 @@ Item {
             }     
 
         }
+    }
+
+    Component.onCompleted: {
+        eventsModel.getEvents();
     }
 }
 
