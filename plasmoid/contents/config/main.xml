@@ -14,5 +14,9 @@
         <label>Current Florgon project</label>
         <default></default>
     </entry>
+    <entry name="currentProjectName" type="String">
+        <label>Current Florgon project name</label>
+        <default></default>
+    </entry>
   </group>
 </kcfg>

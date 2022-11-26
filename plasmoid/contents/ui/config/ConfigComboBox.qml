@@ -52,7 +52,8 @@ QQC2.ComboBox {
 
 	model: []
 
-	signal populate()
+    signal populate()
+    signal choosed(item: var)
 	property bool populated: true
 
 	Component.onCompleted: {
@@ -60,7 +61,6 @@ QQC2.ComboBox {
 	}
 
     onCurrentIndexChanged: {
-        console.log("Currind", currentIndex, "Config value", configValue)
 		if (typeof model !== 'number' && 0 <= currentIndex && currentIndex < count) {
             var item = model[currentIndex]
 			if (typeof item !== "undefined") {
@@ -73,7 +73,7 @@ QQC2.ComboBox {
                 }
 			}
         }
-        console.log(configValue);
+        choosed(configComboBox.currentItem);
 	}
 
 	function size() {

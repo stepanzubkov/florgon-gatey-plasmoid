@@ -19,6 +19,16 @@ PlasmaExtras.Representation {
     Layout.maximumHeight: PlasmaCore.Units.gridUnit * 40
     collapseMarginsHint: true
 
+    header: PlasmaExtras.PlasmoidHeading {
+        PlasmaComponents.Label {
+            text: plasmoid.configuration.currentProjectName || "Choose project in settings"
+            anchors.fill: parent
+            font.pointSize: 12
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignLeft
+        }
+    }
+
     function callbackEvents(request) {
         if (request.readyState === XMLHttpRequest.DONE) {
             console.log(request.responseText);
@@ -39,20 +49,26 @@ PlasmaExtras.Representation {
     ListView {
         id: eventsList
 
-        anchors.fill: parent
-        spacing: 5
+        anchors {
+            fill: parent
+            leftMargin: 10
+            rightMargin: 10
+            bottomMargin: 10
+            topMargin: 10
+        }
+        spacing: 15
         model: eventsModel
         delegate: Item {
             id: eventDelegate
 
-            height: 150
+            height: eventMessageText.height + eventIdText.height + eventLevelText.height + eventSubtypeText.height + 30
             width: eventsList.width
             clip: true
 
             function getColorForLevel(level) {
                 switch (level) {
-                    case "ERROR": return "#ff0000";
-                    case "INFO": return "#32cd32";
+                    case "ERROR": return PlasmaCore.ColorScope.negativeTextColor;
+                    case "INFO": return PlasmaCore.ColorScope.positiveTextColor;
                     case "DEBUG": return "#ffa500";
                     default: return PlasmaCore.ColorScope.textColor;
 
@@ -63,7 +79,7 @@ PlasmaExtras.Representation {
                 anchors {
                     bottom: parent.bottom
                 }
-                color: PlasmaCore.ColorScope.textColor
+                color: PlasmaCore.ColorScope.disabledTextColor
                 width: parent.width
                 height: 1
             }
@@ -76,17 +92,37 @@ PlasmaExtras.Representation {
             }
 
             PlasmaComponents.Label {
-                text: model.level
+                id: eventIdText
+
+                text: `ID ${model.id}`
                 anchors.top: eventMessageText.bottom
-                anchors.topMargin: 5
+                anchors.topMargin: 4
+                font.pointSize: 10
+                color: PlasmaCore.ColorScope.disabledTextColor
+            }
+
+            PlasmaComponents.Label {
+                id: eventLevelText
+
+                text: model.level
+                anchors.top: eventIdText.bottom
+                anchors.topMargin: 2
                 font.bold: true
                 color: getColorForLevel(model.level);
+            }
+            PlasmaComponents.Label {
+                id: eventSubtypeText
+                text: model.is_exception ? "Exception" : "Message"
+                anchors.top: eventLevelText.bottom
+                color: getColorForLevel(model.level);
+                anchors.topMargin: 2
             }
 
             PlasmaComponents.Label {
                 id: createdAtLabel
                 anchors.right: parent.right
-                text: new Date(model.created_at * 1000).toLocaleDateString(Qt.locale(), "dd MMMM, yyyy");
+                text: new Date(model.created_at * 1000).toLocaleString(Qt.locale(), Locale.ShortFormat);
+
                 font.italic: true
             }
         }

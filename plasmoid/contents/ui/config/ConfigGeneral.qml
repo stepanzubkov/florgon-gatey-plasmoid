@@ -12,6 +12,7 @@ Item {
     id: root
 
     property alias cfg_accessToken: authWindow.cfg_accessToken
+    property alias cfg_currentProjectName: projectsList.cfg_currentProjectName
 
     function projectsCallback(request) {
         if (request.readyState === XMLHttpRequest.DONE) {
@@ -84,10 +85,16 @@ Item {
             }
             ConfigComboBox {
                 id: projectsList
+
+                property string cfg_currentProjectName: ""
+
                 configKey: "currentProject" 
                 populated: false
                 onPopulate: {
                     Projects.requestForProjects(plasmoid.configuration.accessToken, projectsCallback);
+                }
+                onChoosed: function (item) {
+                    projectsList.cfg_currentProjectName = item.text;
                 }
             }
             
