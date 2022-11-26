@@ -3,6 +3,7 @@ import QtQuick.Window 2.2
 import QtWebEngine 1.10
 import QtQuick.Controls 1.3
 import QtQuick.Layouts 1.1
+import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kquickcontrols 2.0
 
@@ -10,9 +11,10 @@ import "projects.js" as Projects
 
 Item {
     id: root
-
+ 
     property alias cfg_accessToken: authWindow.cfg_accessToken
     property alias cfg_currentProjectName: projectsList.cfg_currentProjectName
+    property alias cfg_updateInterval: updateTime.value
 
     function projectsCallback(request) {
         if (request.readyState === XMLHttpRequest.DONE) {
@@ -25,7 +27,7 @@ Item {
                 projectsList.model = projects;
 
             } else {
-                    console.error(`HTTP Request for projects failed. Status code: #{request.status}`);
+                    console.error(`HTTP Request for projects failed. Status code: ${request.status}`);
             }
         }
     }
@@ -98,6 +100,18 @@ Item {
                 }
             }
             
+        }
+        RowLayout {
+            Label {
+			    text: "Update every"
+		    }
+		    SpinBox {
+			    id: updateTime
+			    minimumValue: 10
+			    stepSize: 1
+			    maximumValue: 720
+			    suffix: " min"
+		    }
         }
     }
     

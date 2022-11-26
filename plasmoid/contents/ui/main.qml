@@ -38,7 +38,7 @@ Item {
 
     Timer {
         id: eventsUpdateTimer
-        interval: 60000 * 15
+        interval: 60000 * plasmoid.configuration.updateInterval
         running: Boolean(plasmoid.configuration.accessToken)
         repeat: true
         onTriggered: {
