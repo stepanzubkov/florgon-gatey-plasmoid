@@ -4,21 +4,24 @@
   xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
   http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
   <kcfgfile name=""/>
-
-  <group name="Text">
-    <entry name="popupMessage" type="String">
-     <label>The message shown on the pop</label>
-     <default>Hello from Plasma 5!</default>
-   </entry>
-   <entry name="messageColor" type="Color">
-    <label>The text color</label>
-    <default>black</default>
-  </entry>
-</group>
-<group name="Icon">
-	<entry name="iconIndex" type="int">
-   <label>ListModel index to show popup icons</label>
-   <default>7</default>
- </entry>
-</group>
+    
+  <group name="General">
+    <entry name="accessToken" type="String">
+        <label>Florgon access token</label>
+        <default></default>
+    </entry>
+    <entry name="currentProject" type="String">
+        <label>Current Florgon project</label>
+        <default></default>
+    </entry>
+    <entry name="currentProjectName" type="String">
+        <label>Current Florgon project name</label>
+        <default></default>
+    </entry>
+    <entry name="updateInterval" type="Int">
+		<default>15</default>
+		<min>10</min>
+      	<max>720</max>
+	</entry>
+  </group>
 </kcfg>

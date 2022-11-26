@@ -1,34 +1,36 @@
-import QtQuick 2.0
+import QtQuick 2.6
+import QtQuick.Layouts 1.1
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
+    id: root
 
+    Layout.minimumWidth: compactText.width
+    Layout.maximumWidth: compactText.width
   
-  Image {
-    id: logo
+    PlasmaComponents.Label {
+        id: compactText
 
-    //Layout.minimumWidth : plasmoid.formFactor == PlasmaCore.Types.Horizontal ? height : 1
-    //Layout.minimumHeight : plasmoid.formFactor == PlasmaCore.Types.Vertical ? width : 1
+        text: plasmoid.configuration.accessToken ? `${eventsModel.count} events` : "- events"
 
 
-    source: "images/face-smile.svg"
-    sourceSize.width: parent.width
-    sourceSize.height: parent.height
-  }
+        MouseArea {
+            id: mouseArea
+            anchors.fill: parent
 
-    MouseArea {
-    id: mouseArea
-    anchors.fill: parent
+            onClicked: {
+                plasmoid.expanded = !plasmoid.expanded;
+            }     
 
-     onClicked: {
-        plasmoid.expanded = !plasmoid.expanded;
-      }     
+        }
+    }
 
-    } // end onClicked
-
-} // end Item
+    Component.onCompleted: {
+        eventsModel.getEvents();
+    }
+}
 
 
   
