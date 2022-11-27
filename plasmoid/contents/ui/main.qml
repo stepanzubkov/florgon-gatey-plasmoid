@@ -9,6 +9,12 @@ Item {
 
     property Component fr: FullRepresentation {}
     property Component cr: CompactRepresentation {}
+    property string currentProject: plasmoid.configuration.currentProject
+
+    onCurrentProjectChanged: {
+        eventsModel.getEvents();
+    }
+
     Plasmoid.compactRepresentation: cr
     Plasmoid.fullRepresentation: fr
     Plasmoid.preferredRepresentation: Plasmoid.compactRepresentation

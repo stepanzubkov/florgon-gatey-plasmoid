@@ -8,3 +8,6 @@
 
 # End of https://www.toptal.com/developers/gitignore/api/qml
 
+/build
+/.kdev4
+*.kdev4
