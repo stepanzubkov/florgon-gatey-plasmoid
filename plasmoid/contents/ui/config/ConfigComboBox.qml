@@ -73,7 +73,7 @@ QQC2.ComboBox {
                 }
 			}
         }
-        choosed(configComboBox.currentItem);
+        choosed(item);
 	}
 
 	function size() {
