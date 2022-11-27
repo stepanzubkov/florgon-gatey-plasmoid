@@ -9,9 +9,9 @@ Item {
 
     property Component fr: FullRepresentation {}
     property Component cr: CompactRepresentation {}
-    property string currentProject: plasmoid.configuration.currentProject
+    property string currentProjectName: plasmoid.configuration.currentProjectName
 
-    onCurrentProjectChanged: {
+    onCurrentProjectNameChanged: {
         eventsModel.getEvents();
     }
 
