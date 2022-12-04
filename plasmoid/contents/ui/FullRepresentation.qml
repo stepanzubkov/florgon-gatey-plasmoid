@@ -66,10 +66,10 @@ PlasmaExtras.Representation {
             clip: true
 
             function getColorForLevel(level) {
-                switch (level) {
-                    case "ERROR": return PlasmaCore.ColorScope.negativeTextColor;
-                    case "INFO": return PlasmaCore.ColorScope.positiveTextColor;
-                    case "DEBUG": return "#ffa500";
+                switch (level.toLowerCase()) {
+                    case "error" || "fatal" || "critical": return PlasmaCore.ColorScope.negativeTextColor;
+                    case "info" || "log": return PlasmaCore.ColorScope.positiveTextColor;
+                    case "debug": return "#ffa500";
                     default: return PlasmaCore.ColorScope.textColor;
 
                 }
