@@ -71,10 +71,10 @@ Item {
         RowLayout {
             Label {
                 id: token
-                text: "Florgon access token"
+                text: i18n("Florgon access token")
             }
             Button {
-                text: "Login"
+                text: i18n("Login")
                 onClicked: {
                     authWindow.login();
                 }
@@ -83,7 +83,7 @@ Item {
         RowLayout {
             Label {
                 id: projects
-                text: "Choose project"
+                text: i18n("Choose project")
             }
             ConfigComboBox {
                 id: projectsList
@@ -103,14 +103,14 @@ Item {
         }
         RowLayout {
             Label {
-			    text: "Update every"
+			    text: i18n("Update every")
 		    }
 		    SpinBox {
 			    id: updateTime
 			    minimumValue: 10
 			    stepSize: 1
 			    maximumValue: 720
-			    suffix: " min"
+			    suffix: i18n(" min")
 		    }
         }
     }

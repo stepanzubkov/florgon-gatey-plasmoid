@@ -21,7 +21,7 @@ PlasmaExtras.Representation {
 
     header: PlasmaExtras.PlasmoidHeading {
         PlasmaComponents.Label {
-            text: plasmoid.configuration.currentProjectName || "Choose project in settings"
+            text: plasmoid.configuration.currentProjectName || i18n("Choose project in settings")
             anchors.fill: parent
             font.pointSize: 12
             verticalAlignment: Text.AlignVCenter
@@ -112,7 +112,7 @@ PlasmaExtras.Representation {
             }
             PlasmaComponents.Label {
                 id: eventSubtypeText
-                text: model.is_exception ? "Exception" : "Message"
+                text: model.is_exception ? i18n("Exception") : i18n("Message")
                 anchors.top: eventLevelText.bottom
                 color: getColorForLevel(model.level);
                 anchors.topMargin: 2
