@@ -17,3 +17,6 @@ X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
 X-Plasma-RemoteLocation=
 X-KDE-PluginInfo-Category=Development Tools
+
+Name[ru]=Florgon Gatey Виджет
+Comment[ru]=Сервис логирования для разработчиков

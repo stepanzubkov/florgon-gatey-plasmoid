@@ -128,7 +128,9 @@ PlasmaExtras.Representation {
         }
     }
 
-    
+    PlasmaComponents.Label {
+        text: i18np("%1 event", "%1 events", 3)
+    }
     
 }
 
