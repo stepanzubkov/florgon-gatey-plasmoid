@@ -31,6 +31,8 @@ Then you can use widget.
 
 Find bug or have interesting idea? Contribute this project! Issues and PRs are welcome.
 
+Help with widget translation! See issue #1
+
 [![Stargazers repo roster for @Stepan-Zubkov/florgon-gatey-plasmoid](https://reporoster.com/stars/Stepan-Zubkov/florgon-gatey-plasmoid)](https://github.com/Stepan-Zubkov/florgon-gatey-plasmoid/stargazers)
 
 [![Forkers repo roster for @Stepan-Zubkov/florgon-gatey-plasmoid](https://reporoster.com/forks/Stepan-Zubkov/florgon-gatey-plasmoid)](https://github.com/Stepan-Zubkov/florgon-gatey-plasmoid/network/members)
