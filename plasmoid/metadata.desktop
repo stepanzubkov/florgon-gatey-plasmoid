@@ -1,13 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Florgon Gatey Widget
-Name[ru]=Florgon Gatey Виджет
-Name[ua]=Florgon Gatey Вiджет
-Name[es]=Widget de Florgón Gatey
 Comment=Logging service for developers
-Comment[ru]=Сервис логирования для разработчиков
-Comment[ua]=Сервіс логування для розробників
-Comment[es]=Servicio de registro para desarrolladores
 Icon=internet-services
 Type=Service
 
@@ -23,3 +17,8 @@ X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
 X-Plasma-RemoteLocation=
 X-KDE-PluginInfo-Category=Development Tools
+
+Name[nl]=Florgon Gatey-widget
+Name[ru]=Florgon Gatey Виджет
+Comment[nl]=Logboekdienst voor ontwikkelaars
+Comment[ru]=Сервис логирования для разработчиков

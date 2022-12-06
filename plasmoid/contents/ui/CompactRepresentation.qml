@@ -13,7 +13,7 @@ Item {
     PlasmaComponents.Label {
         id: compactText
 
-        text: plasmoid.configuration.accessToken ? `${eventsModel.count} events` : "- events"
+        text: plasmoid.configuration.accessToken ? i18np("%1 event", "%1 events", eventsModel.count) : i18n("- events")
 
 
         MouseArea {

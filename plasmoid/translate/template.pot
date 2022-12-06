@@ -1,0 +1,73 @@
+# Translation of gatey in LANGUAGE
+# Copyright (C) 2022
+# This file is distributed under the same license as the gatey package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: gatey\n"
+"Report-Msgid-Bugs-To: gatey.florgon.space\n"
+"POT-Creation-Date: 2022-12-05 22:09+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ../metadata.desktop
+msgid "Florgon Gatey Widget"
+msgstr ""
+
+#: ../metadata.desktop
+msgid "Logging service for developers"
+msgstr ""
+
+#: ../contents/config/config.qml
+msgid "General"
+msgstr ""
+
+#: ../contents/ui/CompactRepresentation.qml ../contents/ui/FullRepresentation.qml
+msgid "%1 event"
+msgid_plural "%1 events"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../contents/ui/CompactRepresentation.qml
+msgid "- events"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Florgon access token"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Login"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Choose project"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Update every"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid " min"
+msgstr ""
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Choose project in settings"
+msgstr ""
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Exception"
+msgstr ""
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Message"
+msgstr ""
