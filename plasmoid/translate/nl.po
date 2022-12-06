@@ -1,4 +1,4 @@
-# Translation of gatey in LANGUAGE
+# Translation of gatey in nl
 # Copyright (C) 2022
 # This file is distributed under the same license as the gatey package.
 #
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gatey\n"
 "Report-Msgid-Bugs-To: gatey.florgon.space\n"
-"POT-Creation-Date: 2022-12-05 22:09+0300\n"
+"POT-Creation-Date: 2022-12-06 18:36+0300\n"
 "PO-Revision-Date: 2022-12-06 11:54+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
@@ -30,7 +30,7 @@ msgstr "Logboekdienst voor ontwikkelaars"
 msgid "General"
 msgstr "Algemeen"
 
-#: ../contents/ui/CompactRepresentation.qml ../contents/ui/FullRepresentation.qml
+#: ../contents/ui/CompactRepresentation.qml
 msgid "%1 event"
 msgid_plural "%1 events"
 msgstr[0] "%1 melding"
