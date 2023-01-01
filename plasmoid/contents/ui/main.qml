@@ -10,6 +10,23 @@ Item {
     property Component fr: FullRepresentation {}
     property Component cr: CompactRepresentation {}
     property string currentProjectName: plasmoid.configuration.currentProjectName
+    property var pagesModel: []
+
+    function updatePages(current, max) {
+        pagesModel = [
+            {value: current-2},
+            {value: current-1},
+            {value: current, disabled: true},
+            {value: current+1},
+            {value: current+2},
+        ];
+        pagesModel = pagesModel.filter((obj) => obj.value > 0 && obj.value <= max);
+        if (pagesModel[pagesModel.length-1] != max) {
+            pagesModel.push({value: max});
+            pagesModel = pagesModel;
+        }
+        console.log(pagesModel);
+    }
 
     onCurrentProjectNameChanged: {
         eventsModel.getEvents();
@@ -25,11 +42,13 @@ Item {
             if (request.readyState === XMLHttpRequest.DONE) {
                 console.log(request.responseText);
                 if (request.status === 200) {
-                    var events = JSON.parse(request.responseText).success.events;
+                    var body = JSON.parse(request.responseText);
+                    var events = body.success.events;
                     eventsModel.clear();
                     for (let event of events) {
                         eventsModel.append(event);
                     }
+                    updatePages(body.success.pagination.page, body.success.pagination.max_page);
                 }
             } 
         }
