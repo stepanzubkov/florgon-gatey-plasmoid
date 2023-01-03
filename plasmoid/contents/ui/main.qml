@@ -45,9 +45,14 @@ Item {
 
         function callbackEvents(request) {
             if (request.readyState === XMLHttpRequest.DONE) {
-                console.log(request.responseText);
+                console.log(request.url);
+                console.log("RESPONSE TEXT\n\n", request.responseText);
                 if (request.status === 200) {
                     var body = JSON.parse(request.responseText);
+                    if (body.body) {
+                        body = JSON.parse(body.body);
+                    }
+
                     var events = body.success.events;
                     eventsModel.clear();
                     for (let event of events) {
