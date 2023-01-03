@@ -21,8 +21,12 @@ Item {
             {value: current+2},
         ];
         pagesModel = pagesModel.filter((obj) => obj.value > 0 && obj.value <= max);
-        if (pagesModel[pagesModel.length-1] != max) {
+        if (pagesModel[pagesModel.length-1].value != max) {
             pagesModel.push({value: max});
+            pagesModel = pagesModel;
+        }
+        if (pagesModel[0].value != 1) {
+            pagesModel.unshift({value: 1});
             pagesModel = pagesModel;
         }
         console.log(pagesModel);
@@ -37,6 +41,7 @@ Item {
     Plasmoid.preferredRepresentation: Plasmoid.compactRepresentation
     ListModel {
         id: eventsModel
+        property int totalCount: 0
 
         function callbackEvents(request) {
             if (request.readyState === XMLHttpRequest.DONE) {
@@ -49,15 +54,17 @@ Item {
                         eventsModel.append(event);
                     }
                     updatePages(body.success.pagination.page, body.success.pagination.max_page);
+                    eventsModel.totalCount = body.success.pagination.total;
                 }
             } 
         }
 
-        function getEvents() {
+        function getEvents(page=1) {
             Events.requestForEvents(
                 plasmoid.configuration.accessToken,
                 plasmoid.configuration.currentProject,
-                callbackEvents);
+                callbackEvents,
+                page);
         }
     }
 

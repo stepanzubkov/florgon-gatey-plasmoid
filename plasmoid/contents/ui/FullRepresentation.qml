@@ -44,91 +44,118 @@ PlasmaExtras.Representation {
             plasmoid.configuration.accessToken,
             plasmoid.configuration.currentProject,
             callbackEvents);
-    }
+    } 
 
-    ListView {
-        id: eventsList
+   ListView {
+       id: eventsList
+       anchors {
+           fill: parent
+           margins: 10
+       }
+       spacing: 15
+       model: eventsModel
+       delegate: Item {
+           id: eventDelegate
 
-        anchors {
-            fill: parent
-            leftMargin: 10
-            rightMargin: 10
-            bottomMargin: 10
-            topMargin: 10
-        }
-        spacing: 15
-        model: eventsModel
-        delegate: Item {
-            id: eventDelegate
+           height: eventMessageText.height + eventIdText.height + eventLevelText.height + eventSubtypeText.height + 30
+           width: eventsList.width
+           clip: true
 
-            height: eventMessageText.height + eventIdText.height + eventLevelText.height + eventSubtypeText.height + 30
-            width: eventsList.width
-            clip: true
+           function getColorForLevel(level) {
+               switch (level.toLowerCase()) {
+                   case "error" || "fatal" || "critical": return PlasmaCore.ColorScope.negativeTextColor;
+                   case "info" || "log": return PlasmaCore.ColorScope.positiveTextColor;
+                   case "debug": return "#ffa500";
+                   default: return PlasmaCore.ColorScope.textColor;
 
-            function getColorForLevel(level) {
-                switch (level.toLowerCase()) {
-                    case "error" || "fatal" || "critical": return PlasmaCore.ColorScope.negativeTextColor;
-                    case "info" || "log": return PlasmaCore.ColorScope.positiveTextColor;
-                    case "debug": return "#ffa500";
-                    default: return PlasmaCore.ColorScope.textColor;
+               }
+           }
 
+           Rectangle {
+               anchors {
+                   bottom: parent.bottom
+               }
+               color: PlasmaCore.ColorScope.disabledTextColor
+               width: parent.width
+               height: 1
+           }
+           PlasmaComponents.Label {
+               id: eventMessageText
+               wrapMode: Text.WordWrap
+               width: parent.width - createdAtLabel.width - 20
+               font.pointSize: 12
+               text: model.message
+           }
+
+           PlasmaComponents.Label {
+               id: eventIdText
+
+               text: `ID ${model.id}`
+               anchors.top: eventMessageText.bottom
+               anchors.topMargin: 4
+               font.pointSize: 10
+               color: PlasmaCore.ColorScope.disabledTextColor
+           }
+
+           PlasmaComponents.Label {
+               id: eventLevelText
+
+               text: model.level
+               anchors.top: eventIdText.bottom
+               anchors.topMargin: 2
+               font.bold: true
+               color: getColorForLevel(model.level);
+           }
+           PlasmaComponents.Label {
+               id: eventSubtypeText
+               text: model.is_exception ? i18n("Exception") : i18n("Message")
+               anchors.top: eventLevelText.bottom
+               color: getColorForLevel(model.level);
+               anchors.topMargin: 2
+           }
+
+           PlasmaComponents.Label {
+               id: createdAtLabel
+               anchors.right: parent.right
+               text: new Date(model.created_at * 1000).toLocaleString(Qt.locale(), Locale.ShortFormat);
+
+               font.italic: true
+           }
+       }
+
+       header: ListView {
+            id: pagesList
+            Layout.alignment: Qt.AlignCenter
+            height: 40
+            model: pagesModel
+            width: 40*pagesModel.length
+            spacing: 40
+            anchors {
+                 horizontalCenter: parent.horizontalCenter
+            }
+            orientation: ListView.Horizontal
+            delegate: Item {
+                PlasmaComponents.Button {
+                    width: 40
+                    height: 30
+                    text: modelData.value
+                    visible: !modelData.disabled
+                    onClicked: {
+                        eventsModel.getEvents(modelData.value)
+                    }
+                }
+                
+                PlasmaComponents.Label {
+                    width: 40
+                    height: 30
+                    text: modelData.value
+                    visible: Boolean(modelData.disabled)
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
                 }
             }
-
-            Rectangle {
-                anchors {
-                    bottom: parent.bottom
-                }
-                color: PlasmaCore.ColorScope.disabledTextColor
-                width: parent.width
-                height: 1
-            }
-            PlasmaComponents.Label {
-                id: eventMessageText
-                wrapMode: Text.WordWrap
-                width: parent.width - createdAtLabel.width - 20
-                font.pointSize: 12
-                text: model.message
-            }
-
-            PlasmaComponents.Label {
-                id: eventIdText
-
-                text: `ID ${model.id}`
-                anchors.top: eventMessageText.bottom
-                anchors.topMargin: 4
-                font.pointSize: 10
-                color: PlasmaCore.ColorScope.disabledTextColor
-            }
-
-            PlasmaComponents.Label {
-                id: eventLevelText
-
-                text: model.level
-                anchors.top: eventIdText.bottom
-                anchors.topMargin: 2
-                font.bold: true
-                color: getColorForLevel(model.level);
-            }
-            PlasmaComponents.Label {
-                id: eventSubtypeText
-                text: model.is_exception ? i18n("Exception") : i18n("Message")
-                anchors.top: eventLevelText.bottom
-                color: getColorForLevel(model.level);
-                anchors.topMargin: 2
-            }
-
-            PlasmaComponents.Label {
-                id: createdAtLabel
-                anchors.right: parent.right
-                text: new Date(model.created_at * 1000).toLocaleString(Qt.locale(), Locale.ShortFormat);
-
-                font.italic: true
-            }
         }
-    }
-
-    
+    } 
 }
 
 
