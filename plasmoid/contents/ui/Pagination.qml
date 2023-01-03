@@ -7,28 +7,17 @@ ListView {
     id: pagesList
     height: 40
     model: pagesModel
-    width: 40*pagesModel.length
-    spacing: 40 
+    width: 45*pagesModel.length
+    spacing: 5 
     orientation: ListView.Horizontal
     anchors.horizontalCenter: parent.horizontalCenter
-    delegate: Item {
-        PlasmaComponents.Button {
-            width: 40
-            height: 30
-            text: modelData.value
-            visible: !modelData.disabled
-            onClicked: {
-                eventsModel.getEvents(modelData.value)
-            }
+    delegate: SwitchControlledButton {
+        width: 40
+        height: 30
+        text: modelData.value
+        disabled: Boolean(modelData.disabled)
+        onClicked: {
+            eventsModel.getEvents(modelData.value);
         }
-        
-        PlasmaComponents.Label {
-            width: 40
-            height: 30
-            text: modelData.value
-            visible: Boolean(modelData.disabled)
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignHCenter
-        }
-    }
+    } 
 }
