@@ -1,9 +1,9 @@
 # Florgon Gatey Plasmoid
 
-Plasmoid for logging service [Florgon Gatey](https://gatey.florgon.space/) built with it's [API](https://gatey.florgon.space/dev/api) 
+Plasmoid for logging service [Florgon Gatey](https://gatey.florgon.space/) built with it's [API](https://gatey.florgon.space/dev/api)
 
-![Screenshot_20221126_154429](https://user-images.githubusercontent.com/83695097/204089623-4d1c92d4-cb78-4593-8189-c0777e51c886.png)
-![Screenshot_20221126_154506](https://user-images.githubusercontent.com/83695097/204089626-f0e2408c-e623-4050-9207-a5a79564d058.png)
+![Screenshot_20230109_124032](https://user-images.githubusercontent.com/83695097/211279273-06226088-d657-42e3-9bd5-48d9145e2b05.png)
+
 
 # Overview
 
