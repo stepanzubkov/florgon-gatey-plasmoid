@@ -31,6 +31,14 @@ Then you can use widget.
 
 Find bug or have interesting idea? Contribute this project! Issues and PRs are welcome.
 
+For developers there are two shell scripts:
+
+1. `build.sh` - Builds widget into plasma's widgets directory (`~/.local/share/plasma/plasmoids/`) and runs widget in *plasmoid viewer*
+
+2. `build_and_restart.sh` - Executes `build.sh` script and restarting plasmashell
+
+If you do not understand how to test this widget or how to register in Florgon Gatey, contact me in [telegram](https://t.me/@stepanzubkov)
+
 [![Stargazers repo roster for @Stepan-Zubkov/florgon-gatey-plasmoid](https://reporoster.com/stars/Stepan-Zubkov/florgon-gatey-plasmoid)](https://github.com/Stepan-Zubkov/florgon-gatey-plasmoid/stargazers)
 
 [![Forkers repo roster for @Stepan-Zubkov/florgon-gatey-plasmoid](https://reporoster.com/forks/Stepan-Zubkov/florgon-gatey-plasmoid)](https://github.com/Stepan-Zubkov/florgon-gatey-plasmoid/network/members)
