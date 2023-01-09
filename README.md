@@ -31,6 +31,8 @@ Then you can use widget.
 
 Find bug or have interesting idea? Contribute this project! Issues and PRs are welcome.
 
+Help with widget translation! See issue #1
+
 For developers there are two shell scripts:
 
 1. `build.sh` - Builds widget into plasma's widgets directory (`~/.local/share/plasma/plasmoids/`) and runs widget in *plasmoid viewer*
