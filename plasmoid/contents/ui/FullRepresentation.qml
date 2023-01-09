@@ -44,17 +44,13 @@ PlasmaExtras.Representation {
             plasmoid.configuration.accessToken,
             plasmoid.configuration.currentProject,
             callbackEvents);
-    }
+    } 
 
-    ListView {
+   ListView {
         id: eventsList
-
         anchors {
             fill: parent
-            leftMargin: 10
-            rightMargin: 10
-            bottomMargin: 10
-            topMargin: 10
+            margins: 10
         }
         spacing: 15
         model: eventsModel
@@ -126,9 +122,17 @@ PlasmaExtras.Representation {
                 font.italic: true
             }
         }
-    }
 
-    
+        header: Pagination {id: paginationHeader}
+        footer: Item {
+            height: paginationFooter.height + 15
+            width: parent.width
+            Pagination {
+                id: paginationFooter
+                anchors.bottom: parent.bottom
+            }
+        } 
+    } 
 }
 
 
