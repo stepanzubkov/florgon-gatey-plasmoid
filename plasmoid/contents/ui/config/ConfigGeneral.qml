@@ -6,6 +6,7 @@ import QtQuick.Layouts 1.1
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kquickcontrols 2.0
+import org.kde.kirigami 2.9 as Kirigami
 
 import "projects.js" as Projects
 
@@ -67,52 +68,38 @@ Item {
             webView.url = "https://florgon.space/oauth/authorize?client_id=10&state=&redirect_uri=http://localhost&scope=gatey&response_type=token"
         }
     }
-    ColumnLayout {
-        RowLayout {
-            Label {
-                id: token
-                text: i18n("Florgon access token")
-            }
-            Button {
-                text: i18n("Login")
-                onClicked: {
-                    authWindow.login();
-                }
+    Kirigami.FormLayout {
+        Button {
+            Kirigami.FormData.label: i18n("Florgon access token:")
+            text: i18n("Login")
+            onClicked: {
+                authWindow.login();
             }
         }
-        RowLayout {
-            Label {
-                id: projects
-                text: i18n("Choose project")
-            }
-            ConfigComboBox {
-                id: projectsList
+        ConfigComboBox {
+            id: projectsList
 
-                property string cfg_currentProjectName: ""
+            property string cfg_currentProjectName: ""
 
-                configKey: "currentProject" 
-                populated: false
-                onPopulate: {
-                    Projects.requestForProjects(plasmoid.configuration.accessToken, projectsCallback);
-                }
-                onChoosed: function (item) {
-                    projectsList.cfg_currentProjectName = item.text;
-                }
+            Kirigami.FormData.label: i18n("Choose project:")
+            configKey: "currentProject" 
+            populated: false
+            onPopulate: {
+                Projects.requestForProjects(plasmoid.configuration.accessToken, projectsCallback);
             }
-            
+            onChoosed: function (item) {
+                projectsList.cfg_currentProjectName = item.text;
+            }
         }
-        RowLayout {
-            Label {
-			    text: i18n("Update every")
-		    }
-		    SpinBox {
-			    id: updateTime
-			    minimumValue: 10
-			    stepSize: 1
-			    maximumValue: 720
-			    suffix: i18n(" min")
-		    }
-        }
+		SpinBox {
+		    id: updateTime
+
+            Kirigami.FormData.label: i18n("Update every:")
+		    minimumValue: 10
+		    stepSize: 1
+		    maximumValue: 720
+		    suffix: i18n(" min")
+		}
     }
     
 }
