@@ -5,6 +5,7 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import QtQuick.Controls 1.4
+import org.kde.kirigami 2.9 as Kirigami
 
 import "events.js" as Events
 
@@ -123,7 +124,46 @@ PlasmaExtras.Representation {
             }
         }
 
-        header: Pagination {id: paginationHeader}
+        header: Item {
+            width: parent.width
+            height: paginationHeader.height + eventsFilters.height + 30
+
+            Pagination {id: paginationHeader}
+            
+            Kirigami.FormLayout {
+                id: eventsFilters
+
+                anchors.top: paginationHeader.bottom
+                Item {
+                    Kirigami.FormData.isSection: true
+                    Kirigami.FormData.label: i18n("Events filters:")
+                }
+
+                PlasmaComponents.CheckBox {
+                    id: onlySignedFlag
+
+                    Kirigami.FormData.label: i18n("Only signed:")
+                }
+
+                PlasmaComponents.CheckBox {
+                    id: onlyExceptionsFlag
+
+                    Kirigami.FormData.label: i18n("Only exceptions:")
+                }
+
+            }
+
+            Rectangle {
+                anchors {
+                    bottom: parent.bottom
+                    bottomMargin: 15
+                }
+                color: PlasmaCore.ColorScope.disabledTextColor
+                width: parent.width
+                height: 1
+            }
+        }
+
         footer: Item {
             height: paginationFooter.height + 15
             width: parent.width

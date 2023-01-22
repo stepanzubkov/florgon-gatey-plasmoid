@@ -99,7 +99,7 @@ Item {
 		    stepSize: 1
 		    maximumValue: 720
 		    suffix: i18n(" min")
-		}
+		} 
     }
     
 }
