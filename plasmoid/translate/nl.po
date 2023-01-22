@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gatey\n"
 "Report-Msgid-Bugs-To: gatey.florgon.space\n"
-"POT-Creation-Date: 2023-01-21 22:30+0300\n"
+"POT-Creation-Date: 2023-01-22 14:49+0300\n"
 "PO-Revision-Date: 2022-12-06 11:54+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
@@ -71,6 +71,18 @@ msgstr "Uitzondering"
 #: ../contents/ui/FullRepresentation.qml
 msgid "Message"
 msgstr "Bericht"
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Events filters:"
+msgstr ""
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Only signed:"
+msgstr ""
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Only exceptions:"
+msgstr ""
 
 #~ msgid "Florgon access token"
 #~ msgstr "Flogon-toegangssleutel"

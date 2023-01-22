@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gatey\n"
 "Report-Msgid-Bugs-To: gatey.florgon.space\n"
-"POT-Creation-Date: 2023-01-21 22:30+0300\n"
+"POT-Creation-Date: 2023-01-22 14:49+0300\n"
 "PO-Revision-Date: 2022-12-05 18:15+0300\n"
 "Last-Translator: Stepan Zubkov <zubkovbackend@gmail.com>\n"
 "Language-Team: Florgon Russian <zubkovbackend@gmail.com>\n"
@@ -74,6 +74,18 @@ msgstr "Исключение"
 #: ../contents/ui/FullRepresentation.qml
 msgid "Message"
 msgstr "Сообщение"
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Events filters:"
+msgstr "Фильтры событий:"
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Only signed:"
+msgstr "Только подписанные:"
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Only exceptions:"
+msgstr "Только исключения:"
 
 #~ msgid "Florgon access token"
 #~ msgstr "Токен доступа Florgon"
