@@ -23,5 +23,13 @@
 		<min>10</min>
       	<max>720</max>
 	</entry>
+    <entry name="onlySignedEvents" type="Bool">
+        <label>Flag to show only signed events</label>
+        <default>false</default>
+    </entry>
+    <entry name="onlyExceptionsEvents" type="Bool">
+        <label>Flag to show only exceptions events</label>
+        <default>false</default>
+    </entry>
   </group>
 </kcfg>

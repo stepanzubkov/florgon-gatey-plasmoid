@@ -143,12 +143,20 @@ PlasmaExtras.Representation {
                     id: onlySignedFlag
 
                     Kirigami.FormData.label: i18n("Only signed:")
+                    checked: plasmoid.configuration.onlySignedEvents
+                    onClicked: {
+                        plasmoid.configuration.onlySignedEvents = checked;
+                    }
                 }
 
                 PlasmaComponents.CheckBox {
                     id: onlyExceptionsFlag
 
-                    Kirigami.FormData.label: i18n("Only exceptions:")
+                    checked: plasmoid.configuration.onlyExceptionsEvents
+                    Kirigami.FormData.label: i18n("Only exceptions:") 
+                    onClicked: {
+                        plasmoid.configuration.onlyExceptionsEvents = checked;
+                    }
                 }
 
             }
