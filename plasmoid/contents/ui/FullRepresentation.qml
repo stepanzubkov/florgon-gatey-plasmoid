@@ -28,23 +28,6 @@ PlasmaExtras.Representation {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignLeft
         }
-    }
-
-    function callbackEvents(request) {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            console.log(request.responseText);
-            if (request.status === 200) {
-                var events = JSON.parse(request.responseText).success.events;
-                eventsList.model = events;
-            }
-        } 
-    }
-
-    function getEvents() {
-        Events.requestForEvents(
-            plasmoid.configuration.accessToken,
-            plasmoid.configuration.currentProject,
-            callbackEvents);
     } 
 
    ListView {
@@ -127,6 +110,7 @@ PlasmaExtras.Representation {
         header: Item {
             width: parent.width
             height: paginationHeader.height + eventsFilters.height + 30
+            visible: Boolean(plasmoid.configuration.currentProject)
 
             Pagination {id: paginationHeader}
             
@@ -146,6 +130,7 @@ PlasmaExtras.Representation {
                     checked: plasmoid.configuration.onlySignedEvents
                     onClicked: {
                         plasmoid.configuration.onlySignedEvents = checked;
+                        eventsModel.getEvents();
                     }
                 }
 
@@ -156,6 +141,7 @@ PlasmaExtras.Representation {
                     Kirigami.FormData.label: i18n("Only exceptions:") 
                     onClicked: {
                         plasmoid.configuration.onlyExceptionsEvents = checked;
+                        eventsModel.getEvents();
                     }
                 }
 
@@ -175,6 +161,8 @@ PlasmaExtras.Representation {
         footer: Item {
             height: paginationFooter.height + 15
             width: parent.width
+            visible: Boolean(plasmoid.configuration.currentProject)
+
             Pagination {
                 id: paginationFooter
                 anchors.bottom: parent.bottom
