@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gatey\n"
 "Report-Msgid-Bugs-To: gatey.florgon.space\n"
-"POT-Creation-Date: 2022-12-06 18:36+0300\n"
-"PO-Revision-Date: 2022-12-06 11:54+0100\n"
+"POT-Creation-Date: 2023-01-22 14:49+0300\n"
+"PO-Revision-Date: 2023-01-25 10:43+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.11.90\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: ../metadata.desktop
 msgid "Florgon Gatey Widget"
@@ -41,20 +41,20 @@ msgid "- events"
 msgstr "- meldingen"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Florgon access token"
-msgstr "Flogon-toegangssleutel"
+msgid "Florgon access token:"
+msgstr "Flogon-toegangssleutel:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Login"
 msgstr "Inloggen"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Choose project"
-msgstr "Kies een project"
+msgid "Choose project:"
+msgstr "Kies een project:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Update every"
-msgstr "Bijwerken, elke"
+msgid "Update every:"
+msgstr "Bijwerken, elke:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid " min"
@@ -71,3 +71,24 @@ msgstr "Uitzondering"
 #: ../contents/ui/FullRepresentation.qml
 msgid "Message"
 msgstr "Bericht"
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Events filters:"
+msgstr "Gebeurtenisfilters:"
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Only signed:"
+msgstr "Alleen ondertekende:"
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Only exceptions:"
+msgstr "Alleen uitzonderingen:"
+
+#~ msgid "Florgon access token"
+#~ msgstr "Flogon-toegangssleutel"
+
+#~ msgid "Choose project"
+#~ msgstr "Kies een project"
+
+#~ msgid "Update every"
+#~ msgstr "Bijwerken, elke"

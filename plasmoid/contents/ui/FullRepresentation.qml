@@ -5,6 +5,7 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import QtQuick.Controls 1.4
+import org.kde.kirigami 2.9 as Kirigami
 
 import "events.js" as Events
 
@@ -27,23 +28,6 @@ PlasmaExtras.Representation {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignLeft
         }
-    }
-
-    function callbackEvents(request) {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            console.log(request.responseText);
-            if (request.status === 200) {
-                var events = JSON.parse(request.responseText).success.events;
-                eventsList.model = events;
-            }
-        } 
-    }
-
-    function getEvents() {
-        Events.requestForEvents(
-            plasmoid.configuration.accessToken,
-            plasmoid.configuration.currentProject,
-            callbackEvents);
     } 
 
    ListView {
@@ -123,10 +107,62 @@ PlasmaExtras.Representation {
             }
         }
 
-        header: Pagination {id: paginationHeader}
+        header: Item {
+            width: parent.width
+            height: paginationHeader.height + eventsFilters.height + 30
+            visible: Boolean(plasmoid.configuration.currentProject)
+
+            Pagination {id: paginationHeader}
+            
+            Kirigami.FormLayout {
+                id: eventsFilters
+
+                anchors.top: paginationHeader.bottom
+                Item {
+                    Kirigami.FormData.isSection: true
+                    Kirigami.FormData.label: i18n("Events filters:")
+                }
+
+                PlasmaComponents.CheckBox {
+                    id: onlySignedFlag
+
+                    Kirigami.FormData.label: i18n("Only signed:")
+                    checked: plasmoid.configuration.onlySignedEvents
+                    onClicked: {
+                        plasmoid.configuration.onlySignedEvents = checked;
+                        eventsModel.getEvents();
+                    }
+                }
+
+                PlasmaComponents.CheckBox {
+                    id: onlyExceptionsFlag
+
+                    checked: plasmoid.configuration.onlyExceptionsEvents
+                    Kirigami.FormData.label: i18n("Only exceptions:") 
+                    onClicked: {
+                        plasmoid.configuration.onlyExceptionsEvents = checked;
+                        eventsModel.getEvents();
+                    }
+                }
+
+            }
+
+            Rectangle {
+                anchors {
+                    bottom: parent.bottom
+                    bottomMargin: 15
+                }
+                color: PlasmaCore.ColorScope.disabledTextColor
+                width: parent.width
+                height: 1
+            }
+        }
+
         footer: Item {
             height: paginationFooter.height + 15
             width: parent.width
+            visible: Boolean(plasmoid.configuration.currentProject)
+
             Pagination {
                 id: paginationFooter
                 anchors.bottom: parent.bottom

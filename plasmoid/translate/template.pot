@@ -1,5 +1,5 @@
 # Translation of gatey in LANGUAGE
-# Copyright (C) 2022
+# Copyright (C) 2023
 # This file is distributed under the same license as the gatey package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gatey\n"
 "Report-Msgid-Bugs-To: gatey.florgon.space\n"
-"POT-Creation-Date: 2022-12-06 18:36+0300\n"
+"POT-Creation-Date: 2023-01-22 14:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgid "- events"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Florgon access token"
+msgid "Florgon access token:"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
@@ -49,11 +49,11 @@ msgid "Login"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Choose project"
+msgid "Choose project:"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Update every"
+msgid "Update every:"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
@@ -70,4 +70,16 @@ msgstr ""
 
 #: ../contents/ui/FullRepresentation.qml
 msgid "Message"
+msgstr ""
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Events filters:"
+msgstr ""
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Only signed:"
+msgstr ""
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Only exceptions:"
 msgstr ""
