@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gatey\n"
 "Report-Msgid-Bugs-To: gatey.florgon.space\n"
 "POT-Creation-Date: 2023-01-22 14:49+0300\n"
-"PO-Revision-Date: 2022-12-06 11:54+0100\n"
+"PO-Revision-Date: 2023-01-25 10:43+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.11.90\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: ../metadata.desktop
 msgid "Florgon Gatey Widget"
@@ -74,15 +74,15 @@ msgstr "Bericht"
 
 #: ../contents/ui/FullRepresentation.qml
 msgid "Events filters:"
-msgstr ""
+msgstr "Gebeurtenisfilters:"
 
 #: ../contents/ui/FullRepresentation.qml
 msgid "Only signed:"
-msgstr ""
+msgstr "Alleen ondertekende:"
 
 #: ../contents/ui/FullRepresentation.qml
 msgid "Only exceptions:"
-msgstr ""
+msgstr "Alleen uitzonderingen:"
 
 #~ msgid "Florgon access token"
 #~ msgstr "Flogon-toegangssleutel"
