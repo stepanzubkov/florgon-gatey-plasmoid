@@ -109,10 +109,26 @@ PlasmaExtras.Representation {
 
         header: Item {
             width: parent.width
-            height: paginationHeader.height + eventsFilters.height + 30
+            height: paginationHeader.height + eventsFilters.height + 50 + openInBrowserButton.height
             visible: Boolean(plasmoid.configuration.currentProject)
 
-            Pagination {id: paginationHeader}
+            PlasmaComponents.Button {
+                id: openInBrowserButton
+                text: i18n("Open in browser")
+                width: 150
+                height: 30
+                anchors.left: parent.left
+                anchors.leftMargin: (parent.width - width)/2
+                onClicked: {
+                    Qt.openUrlExternally(`https://gatey.florgon.com/dashboard/project/${plasmoid.configuration.currentProject}/analytics`)
+                }
+            }
+
+            Pagination {
+                id: paginationHeader
+                anchors.top: openInBrowserButton.bottom
+                anchors.topMargin: 20
+            }
             
             Kirigami.FormLayout {
                 id: eventsFilters
