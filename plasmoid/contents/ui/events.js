@@ -4,7 +4,7 @@ function requestForEvents(accessToken, project_id, callback, page=1) {
     }
     
     var request = new XMLHttpRequest();
-    var target = "https://api-gatey.florgon.space/v1/project.getEvents";
+    var target = "https://api-gatey.florgon.com/v1/project.getEvents";
     var query_params = _constructQueryParams({
         project_id: project_id,
         page: page,

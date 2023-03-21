@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gatey\n"
-"Report-Msgid-Bugs-To: gatey.florgon.space\n"
+"Report-Msgid-Bugs-To: gatey.florgon.com\n"
 "POT-Creation-Date: 2023-01-22 14:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"

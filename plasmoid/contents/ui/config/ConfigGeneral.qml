@@ -65,7 +65,7 @@ Item {
 
         function login() {
             if (!authWindow.visible) authWindow.show();
-            webView.url = "https://florgon.space/oauth/authorize?client_id=10&state=&redirect_uri=http://localhost&scope=gatey&response_type=token"
+            webView.url = "https://florgon.com/oauth/authorize?client_id=10&state=&redirect_uri=http://localhost&scope=gatey&response_type=token"
         }
     }
     Kirigami.FormLayout {

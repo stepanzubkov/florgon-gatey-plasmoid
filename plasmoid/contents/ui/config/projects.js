@@ -3,7 +3,7 @@ function requestForProjects(accessToken, callback) {
         return [];
     }
     var request = new XMLHttpRequest();
-    request.open("GET", "https://api-gatey.florgon.space/v1/project.list");
+    request.open("GET", "https://api-gatey.florgon.com/v1/project.list");
     request.setRequestHeader("Authorization", accessToken);
 
     request.onreadystatechange = function () { callback(request); }
