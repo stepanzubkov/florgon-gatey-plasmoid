@@ -91,15 +91,15 @@ Item {
                 projectsList.cfg_currentProjectName = item.text;
             }
         }
-		SpinBox {
-		    id: updateTime
+        SpinBox {
+            id: updateTime
 
             Kirigami.FormData.label: i18n("Update every:")
-		    minimumValue: 10
-		    stepSize: 1
-		    maximumValue: 720
-		    suffix: i18n(" min")
-		} 
+            minimumValue: 10
+            stepSize: 1
+            maximumValue: 720
+            suffix: i18n(" min")
+        } 
     }
     
 }
