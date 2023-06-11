@@ -5,6 +5,7 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kirigami 2.9 as Kirigami
 
 import "oauth.js" as OAuth
+import "translated_errors.js" as TranslatedErrors
 
 Item {
     id: root
@@ -20,7 +21,7 @@ Item {
             } else {
                 console.error(`HTTP Request for projects failed. Status code: ${request.status}`);
                 sessionTokenStatus.setNegativeStatus(
-                    i18n("Server returned an error: ") + response.error.message
+                    i18n("Server returned an error: ") + i18n(response.error.message.trim())
                 );
             }
         }
