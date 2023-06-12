@@ -1,8 +1,8 @@
 import QtQuick 2.6
+import QtQuick.Controls 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
 
-PlasmaComponents.Label {
+Text {
     id: root
     visible: false
     text: ""
