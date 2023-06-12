@@ -28,7 +28,8 @@ Item {
                 projectsList.model = projects;
 
             } else {
-                    console.error(`HTTP Request for projects failed. Status code: ${request.status}`);
+                console.error(`HTTP Request for projects failed. Status code: ${request.status}`);
+
             }
         }
     }
