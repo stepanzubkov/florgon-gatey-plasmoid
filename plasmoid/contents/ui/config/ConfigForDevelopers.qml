@@ -1,6 +1,6 @@
 import QtQuick 2.6
+import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.1
-import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kirigami 2.9 as Kirigami
 
@@ -30,12 +30,11 @@ Item {
     Kirigami.FormLayout {
         RowLayout {
             Kirigami.FormData.label: i18n("Session token: ")
-            PlasmaComponents.TextField {
+            TextField {
                 id: sessionTokenInput
-                onWidthChanged: width = 200
-                Layout.preferredWidth: 200
+                width: 200
             }
-            PlasmaComponents.Button {
+            Button {
                 id: getAccessTokenButton
                 property string cfg_accessToken: ""
                 text: i18n("Get access token")
