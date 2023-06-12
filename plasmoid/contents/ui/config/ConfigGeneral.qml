@@ -2,7 +2,7 @@ import QtQuick 2.2
 import QtQuick.Window 2.2
 import QtWebEngine 1.10
 import QtQuick.Controls 1.3
-import QtQuick.Layouts 1.1
+import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kquickcontrols 2.0
@@ -26,10 +26,13 @@ Item {
                     projects.push({value: project.id, text: project.name});
                 }
                 projectsList.model = projects;
+                projectsListStatus.hide();
 
             } else {
                 console.error(`HTTP Request for projects failed. Status code: ${request.status}`);
-
+                projectsListStatus.setNegativeStatus(
+                    i18n("Server returned an error: ") + i18n(response.error.message.trim())
+                );
             }
         }
     }
@@ -86,21 +89,27 @@ Item {
             configKey: "currentProject" 
             populated: false
             onPopulate: {
-                Projects.requestForProjects(plasmoid.configuration.accessToken, projectsCallback);
+                if (plasmoid.configuration.accessToken) {
+                    Projects.requestForProjects(plasmoid.configuration.accessToken, projectsCallback);
+                } else {
+                    projectsListStatus.setNormalStatus("Login before choosing a project");
+                    projectsList.enabled = false;
+                }
             }
             onChoosed: function (item) {
                 projectsList.cfg_currentProjectName = item.text;
             }
         }
+        StatusLabel {
+            id: projectsListStatus
+        }
         SpinBox {
             id: updateTime
-
             Kirigami.FormData.label: i18n("Update every:")
             minimumValue: 10
             stepSize: 1
             maximumValue: 720
             suffix: i18n(" min")
-        } 
+        }
     }
-    
 }

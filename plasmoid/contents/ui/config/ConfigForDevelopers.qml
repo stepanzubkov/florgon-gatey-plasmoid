@@ -26,6 +26,7 @@ Item {
             }
         }
     }
+
     Kirigami.FormLayout {
         RowLayout {
             Kirigami.FormData.label: i18n("Session token: ")
@@ -40,7 +41,7 @@ Item {
                 text: i18n("Get access token")
                 onClicked: {
                     if (sessionTokenInput.text) {
-                        sessionTokenStatus.visible = false;
+                        sessionTokenStatus.hide()
                         OAuth.requestAccessTokenUsingSessionToken(sessionTokenInput.text, callbackRequestAccessToken);
                     } else {
                         sessionTokenStatus.setNegativeStatus(i18n("Session token shouldn't be empty"))
@@ -48,21 +49,8 @@ Item {
                 }
             }
         }
-        PlasmaComponents.Label {
+        StatusLabel {
             id: sessionTokenStatus
-            visible: false
-            text: ""
-            color: PlasmaCore.ColorScope.negativeTextColor
-            function setPositiveStatus(status) {
-                color = PlasmaCore.ColorScope.positiveTextColor;
-                text = status;
-                visible = true;
-            }
-            function setNegativeStatus(status) {
-                color = PlasmaCore.ColorScope.negativeTextColor;
-                text = status;
-                visible = true;
-            }
         }
     }
 }
