@@ -1,9 +1,8 @@
 import QtQuick 2.2
 import QtQuick.Window 2.2
 import QtWebEngine 1.10
-import QtQuick.Controls 1.3
+import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.2
-import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kquickcontrols 2.0
 import org.kde.kirigami 2.9 as Kirigami
@@ -92,7 +91,7 @@ Item {
                 if (plasmoid.configuration.accessToken) {
                     Projects.requestForProjects(plasmoid.configuration.accessToken, projectsCallback);
                 } else {
-                    projectsListStatus.setNormalStatus("Login before choosing a project");
+                    projectsListStatus.setNormalStatus(i18n("Login before choosing a project"));
                     projectsList.enabled = false;
                 }
             }
@@ -106,10 +105,10 @@ Item {
         SpinBox {
             id: updateTime
             Kirigami.FormData.label: i18n("Update every:")
-            minimumValue: 10
+            from: 10
+            to: 720
             stepSize: 1
-            maximumValue: 720
-            suffix: i18n(" min")
+            textFromValue: function (value) { return value + i18n(" min")  }
         }
     }
 }
