@@ -3,33 +3,45 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
   http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
-  <kcfgfile name=""/>
-    
-  <group name="General">
-    <entry name="accessToken" type="String">
-        <label>Florgon access token</label>
-        <default></default>
-    </entry>
-    <entry name="currentProject" type="String">
-        <label>Current Florgon project</label>
-        <default></default>
-    </entry>
-    <entry name="currentProjectName" type="String">
-        <label>Current Florgon project name</label>
-        <default></default>
-    </entry>
-    <entry name="updateInterval" type="Int">
-		<default>15</default>
-		<min>10</min>
-      	<max>720</max>
-	</entry>
-    <entry name="onlySignedEvents" type="Bool">
-        <label>Flag to show only signed events</label>
-        <default>false</default>
-    </entry>
-    <entry name="onlyExceptionsEvents" type="Bool">
-        <label>Flag to show only exceptions events</label>
-        <default>false</default>
-    </entry>
-  </group>
+<kcfgfile name=""/>
+
+<group name="General">
+  <entry name="accessToken" type="String">
+    <label>Florgon access token</label>
+    <default></default>
+  </entry>
+  <entry name="currentProject" type="String">
+    <label>Current Florgon project</label>
+    <default></default>
+  </entry>
+  <entry name="currentProjectName" type="String">
+    <label>Current Florgon project name</label>
+    <default></default>
+  </entry>
+  <entry name="updateInterval" type="Int">
+    <default>15</default>
+    <min>10</min>
+    <max>720</max>
+  </entry>
+  <entry name="onlySignedEvents" type="Bool">
+    <label>Flag to show only signed events</label>
+    <default>false</default>
+  </entry>
+  <entry name="onlyExceptionsEvents" type="Bool">
+    <label>Flag to show only exceptions events</label>
+    <default>false</default>
+  </entry>
+  <entry name="selfhostedServer" type="String">
+    <label>Self-hosted Gatey server</label>
+    <default></default>
+  </entry>
+  <entry name="selfhostedServerEnabled" type="Bool">
+    <label>Use self-hosted or default server</label>
+    <default>false</default>
+  </entry>
+  <entry name="defaultServer" type="String">
+    <label>Default Florgon Gatey server</label>
+    <default>https://api-gatey.florgon.com</default>
+  </entry>
+</group>
 </kcfg>

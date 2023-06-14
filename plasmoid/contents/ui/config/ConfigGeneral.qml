@@ -6,8 +6,10 @@ import QtQuick.Layouts 1.2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kquickcontrols 2.0
 import org.kde.kirigami 2.9 as Kirigami
+import org.kde.plasma.plasmoid 2.0
 
 import "projects.js" as Projects
+import "../urlUtils.js" as UrlUtils
 
 Item {
     id: root
@@ -38,6 +40,9 @@ Item {
 
     onCfg_accessTokenChanged: {
         projectsList.model = Projects.requestForProjects(cfg_accessToken, projectsCallback);
+    }
+    Component.onCompleted: {
+        Projects.includeUrlUtils(UrlUtils);
     }
 
     Window {

@@ -4,6 +4,7 @@ import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 
 import "events.js" as Events
+import "urlUtils.js" as UrlUtils
 
 Item {
 
@@ -36,6 +37,10 @@ Item {
         eventsModel.getEvents();
     }
 
+    Component.onCompleted: {
+        Events.includeUrlUtils(UrlUtils);
+    }
+
     Plasmoid.compactRepresentation: cr
     Plasmoid.fullRepresentation: fr
     Plasmoid.preferredRepresentation: Plasmoid.compactRepresentation
@@ -45,8 +50,6 @@ Item {
 
         function callbackEvents(request) {
             if (request.readyState === XMLHttpRequest.DONE) {
-                console.log(request.url);
-                console.log("RESPONSE TEXT\n\n", request.responseText);
                 if (request.status === 200) {
                     var body = JSON.parse(request.responseText);
                     if (body.body) {
@@ -82,5 +85,4 @@ Item {
             eventsModel.getEvents();
         }
     }
-
 }

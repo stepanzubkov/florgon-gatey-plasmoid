@@ -1,12 +1,14 @@
+var UrlUtils;
+
 function requestForProjects(accessToken, callback) {
-    if (!accessToken) {
-        return [];
-    }
     var request = new XMLHttpRequest();
-    request.open("GET", "https://api-gatey.florgon.com/v1/project.list");
+    request.open("GET", UrlUtils.getGateyAPIServer() + "/v1/project.list");
     request.setRequestHeader("Authorization", accessToken);
 
     request.onreadystatechange = function () { callback(request); }
 
     request.send();
+}
+function includeUrlUtils(module) {
+    UrlUtils = module;
 }

@@ -2,15 +2,17 @@ import QtQuick 2.6
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.1
 import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.plasmoid 2.0
 import org.kde.kirigami 2.9 as Kirigami
 
 import "oauth.js" as OAuth
-import "translated_errors.js" as TranslatedErrors
 
 Item {
     id: root
 
     property alias cfg_accessToken: getAccessTokenButton.cfg_accessToken
+    property alias cfg_selfhostedServer: selfhostedServerInput.text
+    property alias cfg_selfhostedServerEnabled: useSelfhostedServer.checked
 
     function callbackRequestAccessToken(request) {
         if (request.readyState === XMLHttpRequest.DONE) {
@@ -50,6 +52,25 @@ Item {
         }
         StatusLabel {
             id: sessionTokenStatus
+        }
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+        }
+        RadioButton {
+            id: useDefaultServer
+            text: i18n("Use default Florgon Gatey server")
+            checked: !plasmoid.configuration.selfhostedServerEnabled
+        }
+        RadioButton {
+            id: useSelfhostedServer
+            text: i18n("Use self-hosted Gatey server")
+            checked: plasmoid.configuration.selfhostedServerEnabled
+        }
+        TextField {
+            id: selfhostedServerInput
+            Kirigami.FormData.label: i18n("Self-hosted server: ")
+            text: plasmoid.configuration.selfhostedServer
+            enabled: useSelfhostedServer.checked
         }
     }
 }
