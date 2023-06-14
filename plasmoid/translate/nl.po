@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gatey\n"
 "Report-Msgid-Bugs-To: gatey.florgon.com\n"
 "POT-Creation-Date: 2023-06-14 19:27+0300\n"
-"PO-Revision-Date: 2023-03-28 14:01+0200\n"
+"PO-Revision-Date: 2023-06-14 22:41+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: ../metadata.desktop
 msgid "Florgon Gatey Widget"
@@ -32,7 +32,7 @@ msgstr "Algemeen"
 
 #: ../contents/config/config.qml
 msgid "For Developers"
-msgstr ""
+msgstr "Voor ontwikkelaars"
 
 #: ../contents/ui/CompactRepresentation.qml
 msgid "%1 event"
@@ -46,36 +46,36 @@ msgstr "- meldingen"
 
 #: ../contents/ui/config/ConfigForDevelopers.qml
 msgid "You are authorised successfully!"
-msgstr ""
+msgstr "Je bent geautoriseerd!"
 
 #: ../contents/ui/config/ConfigForDevelopers.qml
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Server returned an error: "
-msgstr ""
+msgstr "De server stuurde een foutmelding terug: "
 
 #: ../contents/ui/config/ConfigForDevelopers.qml
 msgid "Session token: "
-msgstr ""
+msgstr "Sessiesleutel: "
 
 #: ../contents/ui/config/ConfigForDevelopers.qml
 msgid "Get access token"
-msgstr ""
+msgstr "Toegangssleutel ophalen"
 
 #: ../contents/ui/config/ConfigForDevelopers.qml
 msgid "Session token shouldn't be empty"
-msgstr ""
+msgstr "Voer een sessiesleutel in"
 
 #: ../contents/ui/config/ConfigForDevelopers.qml
 msgid "Use default Florgon Gatey server"
-msgstr ""
+msgstr "Standaard Florgon Gatey-server gebruiken"
 
 #: ../contents/ui/config/ConfigForDevelopers.qml
 msgid "Use self-hosted Gatey server"
-msgstr ""
+msgstr "Eigen Florgon Gatey-server gebruiken"
 
 #: ../contents/ui/config/ConfigForDevelopers.qml
 msgid "Self-hosted server: "
-msgstr ""
+msgstr "Eigen server: "
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Florgon access token:"
@@ -91,7 +91,7 @@ msgstr "Kies een project:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Login before choosing a project"
-msgstr ""
+msgstr "Log in om een project te kunnen kiezen"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Update every:"
@@ -103,7 +103,7 @@ msgstr " min."
 
 #: ../contents/ui/config/translated_errors.js
 msgid "Token invalid! No additional information."
-msgstr ""
+msgstr "De toegangssleutel is ongeldig! Er is geen aanvullende informatie beschikbaar."
 
 #: ../contents/ui/FullRepresentation.qml
 msgid "Choose project in settings"
