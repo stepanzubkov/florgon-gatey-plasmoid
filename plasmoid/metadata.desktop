@@ -7,11 +7,11 @@ Type=Service
 
 X-KDE-ParentApp=
 X-KDE-PluginInfo-Author=stepanzubkov
-X-KDE-PluginInfo-Email=zubkovbackend@gmail.com
+X-KDE-PluginInfo-Email=stepanzubkov@florgon.com
 X-KDE-PluginInfo-License=MIT
-X-KDE-PluginInfo-Name=space.florgon.gatey
-X-KDE-PluginInfo-Version=1.2.0
-X-KDE-PluginInfo-Website=gatey.florgon.space
+X-KDE-PluginInfo-Name=com.florgon.gatey
+X-KDE-PluginInfo-Version=2.0.0
+X-KDE-PluginInfo-Website=gatey.florgon.com
 X-KDE-ServiceTypes=Plasma/Applet
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml

@@ -1,14 +1,15 @@
 import QtQuick 2.2
 import QtQuick.Window 2.2
 import QtWebEngine 1.10
-import QtQuick.Controls 1.3
-import QtQuick.Layouts 1.1
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import QtQuick.Controls 2.0
+import QtQuick.Layouts 1.2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kquickcontrols 2.0
 import org.kde.kirigami 2.9 as Kirigami
+import org.kde.plasma.plasmoid 2.0
 
 import "projects.js" as Projects
+import "../urlUtils.js" as UrlUtils
 
 Item {
     id: root
@@ -26,15 +27,22 @@ Item {
                     projects.push({value: project.id, text: project.name});
                 }
                 projectsList.model = projects;
+                projectsListStatus.hide();
 
             } else {
-                    console.error(`HTTP Request for projects failed. Status code: ${request.status}`);
+                console.error(`HTTP Request for projects failed. Status code: ${request.status}`);
+                projectsListStatus.setNegativeStatus(
+                    i18n("Server returned an error: ") + i18n(response.error.message.trim())
+                );
             }
         }
     }
 
     onCfg_accessTokenChanged: {
         projectsList.model = Projects.requestForProjects(cfg_accessToken, projectsCallback);
+    }
+    Component.onCompleted: {
+        Projects.includeUrlUtils(UrlUtils);
     }
 
     Window {
@@ -65,7 +73,7 @@ Item {
 
         function login() {
             if (!authWindow.visible) authWindow.show();
-            webView.url = "https://florgon.space/oauth/authorize?client_id=10&state=&redirect_uri=http://localhost&scope=gatey&response_type=token"
+            webView.url = "https://florgon.com/oauth/authorize?client_id=10&state=&redirect_uri=http://localhost&scope=gatey&response_type=token"
         }
     }
     Kirigami.FormLayout {
@@ -85,21 +93,27 @@ Item {
             configKey: "currentProject" 
             populated: false
             onPopulate: {
-                Projects.requestForProjects(plasmoid.configuration.accessToken, projectsCallback);
+                if (plasmoid.configuration.accessToken) {
+                    Projects.requestForProjects(plasmoid.configuration.accessToken, projectsCallback);
+                } else {
+                    projectsListStatus.setNormalStatus(i18n("Login before choosing a project"));
+                    projectsList.enabled = false;
+                }
             }
             onChoosed: function (item) {
                 projectsList.cfg_currentProjectName = item.text;
             }
         }
-		SpinBox {
-		    id: updateTime
-
+        StatusLabel {
+            id: projectsListStatus
+        }
+        SpinBox {
+            id: updateTime
             Kirigami.FormData.label: i18n("Update every:")
-		    minimumValue: 10
-		    stepSize: 1
-		    maximumValue: 720
-		    suffix: i18n(" min")
-		} 
+            from: 10
+            to: 720
+            stepSize: 1
+            textFromValue: function (value) { return value + i18n(" min")  }
+        }
     }
-    
 }

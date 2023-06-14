@@ -6,4 +6,9 @@ ConfigModel {
         source: "config/ConfigGeneral.qml"
         icon: "plasma"
     }
+    ConfigCategory {
+        name: i18n("For Developers")
+        source: "config/ConfigForDevelopers.qml"
+        icon: "applications-development"
+    }
 }

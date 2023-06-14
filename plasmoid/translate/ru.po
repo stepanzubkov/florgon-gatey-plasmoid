@@ -3,20 +3,21 @@
 # This file is distributed under the same license as the gatey package.
 # Stepan Zubkov <zubkovbackend@gmail.com>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: gatey\n"
-"Report-Msgid-Bugs-To: gatey.florgon.space\n"
-"POT-Creation-Date: 2023-01-22 14:49+0300\n"
-"PO-Revision-Date: 2022-12-05 18:15+0300\n"
+"Report-Msgid-Bugs-To: gatey.florgon.com\n"
+"POT-Creation-Date: 2023-06-14 19:27+0300\n"
+"PO-Revision-Date: 2023-06-14 20:12+0300\n"
 "Last-Translator: Stepan Zubkov <zubkovbackend@gmail.com>\n"
 "Language-Team: Florgon Russian <zubkovbackend@gmail.com>\n"
-"Language: Russian\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: ../metadata.desktop
 msgid "Florgon Gatey Widget"
@@ -30,6 +31,10 @@ msgstr "Сервис логирования для разработчиков"
 msgid "General"
 msgstr "Общие"
 
+#: ../contents/config/config.qml
+msgid "For Developers"
+msgstr "Для разработчиков"
+
 #: ../contents/ui/CompactRepresentation.qml
 msgid "%1 event"
 msgid_plural "%1 events"
@@ -41,6 +46,39 @@ msgstr[3] "%1 событие"
 #: ../contents/ui/CompactRepresentation.qml
 msgid "- events"
 msgstr "- событий"
+
+#: ../contents/ui/config/ConfigForDevelopers.qml
+msgid "You are authorised successfully!"
+msgstr "Вы успешно авторизованы!"
+
+#: ../contents/ui/config/ConfigForDevelopers.qml
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Server returned an error: "
+msgstr "Сервер вернул ошибку: "
+
+#: ../contents/ui/config/ConfigForDevelopers.qml
+msgid "Session token: "
+msgstr "Токен сессии: "
+
+#: ../contents/ui/config/ConfigForDevelopers.qml
+msgid "Get access token"
+msgstr "Получить токен доступа"
+
+#: ../contents/ui/config/ConfigForDevelopers.qml
+msgid "Session token shouldn't be empty"
+msgstr "Токен сессии не должен быть пустым"
+
+#: ../contents/ui/config/ConfigForDevelopers.qml
+msgid "Use default Florgon Gatey server"
+msgstr "Использовать сервер Florgon Gatey по-умолчанию"
+
+#: ../contents/ui/config/ConfigForDevelopers.qml
+msgid "Use self-hosted Gatey server"
+msgstr "Использовать собственный сервер Gatey"
+
+#: ../contents/ui/config/ConfigForDevelopers.qml
+msgid "Self-hosted server: "
+msgstr "Собственный сервер: "
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Florgon access token:"
@@ -55,6 +93,10 @@ msgid "Choose project:"
 msgstr "Выберите проект:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Login before choosing a project"
+msgstr "Войдите перед тем, как выбрать проект"
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Update every:"
 msgstr "Обновлять каждые:"
 
@@ -62,6 +104,10 @@ msgstr "Обновлять каждые:"
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid " min"
 msgstr " мин"
+
+#: ../contents/ui/config/translated_errors.js
+msgid "Token invalid! No additional information."
+msgstr "Неправильный токен! Нет дополнительной информации."
 
 #: ../contents/ui/FullRepresentation.qml
 msgid "Choose project in settings"
@@ -74,6 +120,10 @@ msgstr "Исключение"
 #: ../contents/ui/FullRepresentation.qml
 msgid "Message"
 msgstr "Сообщение"
+
+#: ../contents/ui/FullRepresentation.qml
+msgid "Open in browser"
+msgstr "Открыть в браузере"
 
 #: ../contents/ui/FullRepresentation.qml
 msgid "Events filters:"

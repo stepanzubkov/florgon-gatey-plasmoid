@@ -1,6 +1,6 @@
 # Florgon Gatey Plasmoid
 
-Plasmoid for logging service [Florgon Gatey](https://gatey.florgon.space/) built with it's [API](https://gatey.florgon.space/dev/api)
+Plasmoid for logging service [Florgon Gatey](https://gatey.florgon.com/) built with it's [API](https://gatey.florgon.com/dev/api)
 
 ![Screenshot_20230109_124032](https://user-images.githubusercontent.com/83695097/211279273-06226088-d657-42e3-9bd5-48d9145e2b05.png)
 
@@ -17,8 +17,8 @@ It's free! Without paid subscription you can connect up to 3 apps. Manage your p
 
 # Usage
 
-1. [Create account in Florgon](https://florgon.space/oauth/authorize?client_id=1&state=&redirect_uri=https://florgon.space/oauth/callback&scope=email,edit,sessions,security,admin,oauth_clients&response_type=token)
-2. Go to [Gatey](https://gatey.florgon.space/)
+1. [Create account in Florgon](https://florgon.com/oauth/authorize?client_id=1&state=&redirect_uri=https://florgon.com/oauth/callback&scope=email,edit,sessions,security,admin,oauth_clients&response_type=token)
+2. Go to [Gatey](https://gatey.florgon.com/)
 3. Create project
 4. Download this widget on pling or KDE Store
 5. Place it on panel and go to "Widget Settings"

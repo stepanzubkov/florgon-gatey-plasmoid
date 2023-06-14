@@ -1,10 +1,8 @@
+var UrlUtils;
+
 function requestForEvents(accessToken, project_id, callback, page=1) {
-    if (!project_id) {
-        return [];
-    }
-    
     var request = new XMLHttpRequest();
-    var target = "https://api-gatey.florgon.space/v1/project.getEvents";
+    var target = UrlUtils.getGateyAPIServer() + "/v1/project.getEvents";
     var query_params = _constructQueryParams({
         project_id: project_id,
         page: page,
@@ -30,4 +28,8 @@ function _constructQueryParams(params) {
       return key+"="+encodeURIComponent(params[key])
     })
     .join("&")
+}
+
+function includeUrlUtils(module)  {
+    UrlUtils = module;
 }
