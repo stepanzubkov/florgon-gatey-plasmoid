@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gatey\n"
 "Report-Msgid-Bugs-To: gatey.florgon.com\n"
-"POT-Creation-Date: 2023-06-14 19:27+0300\n"
+"POT-Creation-Date: 2023-06-15 14:57+0300\n"
 "PO-Revision-Date: 2023-06-14 22:41+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
@@ -103,7 +103,15 @@ msgstr " min."
 
 #: ../contents/ui/config/translated_errors.js
 msgid "Token invalid! No additional information."
-msgstr "De toegangssleutel is ongeldig! Er is geen aanvullende informatie beschikbaar."
+msgstr ""
+"De toegangssleutel is ongeldig! Er is geen aanvullende informatie "
+"beschikbaar."
+
+#: ../contents/ui/config/translated_errors.js
+msgid "Token invalid! No additonal information."
+msgstr ""
+"De toegangssleutel is ongeldig! Er is geen aanvullende informatie "
+"beschikbaar."
 
 #: ../contents/ui/FullRepresentation.qml
 msgid "Choose project in settings"
