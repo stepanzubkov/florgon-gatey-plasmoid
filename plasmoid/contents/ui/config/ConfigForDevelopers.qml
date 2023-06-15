@@ -25,6 +25,7 @@ Item {
                 sessionTokenStatus.setNegativeStatus(
                     i18n("Server returned an error: ") + i18n(response.error.message.trim())
                 );
+                console.error("\n\n\n\n\n\n\n\n", `\"${response.error.message.trim()}\"`)
             }
         }
     }

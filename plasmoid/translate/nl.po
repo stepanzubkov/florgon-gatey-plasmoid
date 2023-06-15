@@ -103,7 +103,9 @@ msgstr " min."
 
 #: ../contents/ui/config/translated_errors.js
 msgid "Token invalid! No additional information."
-msgstr "De toegangssleutel is ongeldig! Er is geen aanvullende informatie beschikbaar."
+msgstr ""
+"De toegangssleutel is ongeldig! Er is geen aanvullende informatie "
+"beschikbaar."
 
 #: ../contents/ui/FullRepresentation.qml
 msgid "Choose project in settings"
