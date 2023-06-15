@@ -2,6 +2,8 @@
 
 Plasmoid for logging service [Florgon Gatey](https://gatey.florgon.com/) built with it's [API](https://gatey.florgon.com/dev/api)
 
+**WARNING:** Florgon Gatey now in beta and a lot of things may not work. Contact stepanzubkov@florgon.com (Me) if you find a bug.
+ 
 ![Screenshot_20230109_124032](https://user-images.githubusercontent.com/83695097/211279273-06226088-d657-42e3-9bd5-48d9145e2b05.png)
 
 
